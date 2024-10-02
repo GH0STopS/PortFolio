@@ -1,0 +1,144 @@
+/* CUSTOM FONT */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+/* Global Styles */
+body {
+    font-family: poppins;
+    background-color: black;
+}
+
+.header{
+    background: #f0f0f0;
+}
+
+h1 {
+    color: black;
+}
+
+.nav a {
+    color: rgb(111, 111, 111);
+}
+
+.nav a:hover {
+    color: black;
+}
+
+.nav a:focus {
+    color: black;
+}
+
+/* Container Styling */
+.img-bg {
+    background-color: #f0f0f0;  /* Optional: Background color */
+    padding: 0px;              /* Optional: Adds padding around the image */
+    text-align: left;         /* Centers the image within the container */
+    border-radius: 0% 0% 55% 0%;        /* Rounds the corners of the container */
+    display: inline-block;      /* Makes the div fit the image size */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Image Styling */
+.img-bg img {
+    width: auto;               /* Adjust the width of the image */
+    height: auto;
+    object-fit: contain;              /* Adjust the height of the image */    /* Adds a border to the image */
+}
+
+p{
+    text-align: left;
+    font-size: larger;
+    color: white;
+}
+.print{
+    color: rgb(33, 33, 255);
+    font-family: 'Courier New', Courier, monospace;
+}
+.hw{
+    color: rgb(184, 74, 0);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.wrapper{
+    display: inline-flex;
+    list-style: none;
+}
+
+.wrapper .icon{
+    position: relative;
+    background: white;
+    border-radius: 50%;
+    padding: 15px;
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 6px 6px rgb(63, 62, 62);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68,-0.55,0.265,1.55);
+
+}
+
+.wrapper .tooltip{
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: white;
+    color: black;
+    padding: 5px 8px;
+    border-radius: 3px;
+    box-shadow: 0px 4px 4px rgb(63, 62, 62);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68,-0.55,0.265,1.55);
+
+}
+
+.wrapper .tooltip::before{
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: white;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+
+.wrapper .icon:hover .tooltip{
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: none;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip{
+    text-shadow: 0px -1px 0px rgb(0,0,0,0.1);
+}
+
+.wrapper .linkedin:hover,
+.wrapper .linkedin:hover .tooltip,
+.wrapper .linkedin:hover .tooltip::before{
+    background: #0077B5;
+    color: white;
+}
+
+.wrapper .github:hover,
+.wrapper .github:hover .tooltip,
+.wrapper .github:hover .tooltip::before{
+    background: black;
+    color: white;
+}
