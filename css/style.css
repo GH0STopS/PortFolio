@@ -1,6 +1,8 @@
 /* CUSTOM FONT */
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 
 * {
     margin: 0;
@@ -14,9 +16,10 @@ body {
     background-color: black;
 }
 
-.header{
-    background: #f0f0f0;
+.header {
+    background: #39FF14;
 }
+
 
 h1 {
     color: black;
@@ -36,44 +39,49 @@ h1 {
 
 /* Container Styling */
 .img-bg {
-    background-color: #f0f0f0;  /* Optional: Background color */
-    padding: 0px;              /* Optional: Adds padding around the image */
-    text-align: left;         /* Centers the image within the container */
-    border-radius: 0% 0% 55% 0%;        /* Rounds the corners of the container */
-    display: inline-block;      /* Makes the div fit the image size */
+    background-color: #39FF14;
+    padding: 0px;
+    text-align: left;
+    border-radius: 0% 0% 55% 0%;
+    display: inline-block;
     position: relative;
     overflow: hidden;
 }
 
 /* Image Styling */
 .img-bg img {
-    width: auto;               /* Adjust the width of the image */
+    width: auto;
+    /* Adjust the width of the image */
     height: auto;
-    object-fit: contain;              /* Adjust the height of the image */    /* Adds a border to the image */
+    object-fit: contain;
+    /* Adjust the height of the image */
+    /* Adds a border to the image */
 }
 
-p{
+p {
     text-align: left;
     font-size: larger;
     color: white;
 }
-.print{
+
+.print {
     color: rgb(33, 33, 255);
     font-family: 'Courier New', Courier, monospace;
 }
-.hw{
+
+.hw {
     color: rgb(184, 74, 0);
     font-family: 'Courier New', Courier, monospace;
 }
 
-.wrapper{
+.wrapper {
     display: inline-flex;
     list-style: none;
 }
 
-.wrapper .icon{
+.wrapper .icon {
     position: relative;
-    background: white;
+    background: #39FF14;
     border-radius: 50%;
     padding: 15px;
     margin: 10px;
@@ -86,11 +94,11 @@ p{
     justify-content: center;
     box-shadow: 0px 6px 6px rgb(63, 62, 62);
     cursor: pointer;
-    transition: all 0.2s cubic-bezier(0.68,-0.55,0.265,1.55);
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
 }
 
-.wrapper .tooltip{
+.wrapper .tooltip {
     position: absolute;
     top: 0;
     font-size: 14px;
@@ -101,11 +109,11 @@ p{
     box-shadow: 0px 4px 4px rgb(63, 62, 62);
     opacity: 0;
     pointer-events: none;
-    transition: all 0.3s cubic-bezier(0.68,-0.55,0.265,1.55);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
 }
 
-.wrapper .tooltip::before{
+.wrapper .tooltip::before {
     position: absolute;
     content: "";
     height: 8px;
@@ -114,10 +122,14 @@ p{
     bottom: -3px;
     left: 50%;
     transform: translate(-50%) rotate(45deg);
-    transition: all 0.3s cubic-bezier(0.68,-0.55,0.265,1.55);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.wrapper .icon:hover .tooltip{
+.wrapper .icon:hover {
+    box-shadow: 0px 4px 4px rgb(57, 255, 20);
+}
+
+.wrapper .icon:hover .tooltip {
     top: -45px;
     opacity: 1;
     visibility: visible;
@@ -125,20 +137,197 @@ p{
 }
 
 .wrapper .icon:hover span,
-.wrapper .icon:hover .tooltip{
-    text-shadow: 0px -1px 0px rgb(0,0,0,0.1);
+.wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgb(0, 0, 0, 0.1);
 }
 
 .wrapper .linkedin:hover,
 .wrapper .linkedin:hover .tooltip,
-.wrapper .linkedin:hover .tooltip::before{
+.wrapper .linkedin:hover .tooltip::before {
     background: #0077B5;
     color: white;
 }
 
 .wrapper .github:hover,
 .wrapper .github:hover .tooltip,
-.wrapper .github:hover .tooltip::before{
+.wrapper .github:hover .tooltip::before {
     background: black;
     color: white;
+}
+
+/*@keyframes scrollImage {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(calc(-100% * var(--total-badges)));
+    }
+}*/
+
+.scroller {
+    border: solid 2px #39FF14;
+    border-width: medium;
+    border-radius: 20px;
+    max-height: 60vh;
+    width: auto;
+    overflow: hidden;
+    position: relative;
+    background-color: black;
+}
+
+.scroller marquee{
+    height: 100%;
+}
+
+.badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.badge img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.badge span {
+    font-family: "VT323", monospace;
+    font-size: clamp(12px, 1.5vh, 16px);
+    font-weight: bold;
+    color: #39FF14;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+
+/* About Page */
+
+.about-header {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background: #fcf5f0;
+    height: auto;
+    overflow: hidden;
+    /* Ensures the header encapsulates all child elements */
+}
+
+
+.terminal-container {
+    border-color: white;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 0px;
+    width: 100%;
+    margin: 10px 0px;
+    border-radius: 5px;
+    height: auto;
+    overflow-y: auto;
+}
+
+.a-nav-item {
+    list-style: none;
+    font-size: smaller;
+}
+
+.a-nav-item a {
+    color: #fcf5f0;
+    text-decoration: none;
+}
+
+.a-nav-item a {
+    color: #fcf5f0;
+}
+
+.a-nav-item a:hover {
+    color: white;
+}
+
+.a-nav-item a:focus {
+    color: white;
+}
+
+.nav-link-r {
+    margin: 2px 3px;
+    padding: 1px 4px;
+    background-color: #ff5f57;
+    border-radius: 50px;
+}
+
+.nav-link-y {
+    margin: 2px 3px;
+    padding: 1px 4px;
+    background-color: #ffbe2d;
+    border-radius: 50px;
+}
+
+.nav-link-g {
+    margin: 2px 3px;
+    padding: 1px 4px;
+    background-color: #28ca40;
+    border-radius: 50px;
+}
+
+.terminal-body {
+    padding: 10px 10px;
+    font-family: "VT323", monospace;
+    font-weight: 500;
+    font-size: large;
+    font-style: normal;
+}
+
+.terminal-intro p {
+    color: #00FF00;
+}
+
+.terminal-output {
+    white-space: pre-wrap;
+    margin-bottom: 10px;
+    color: #00FF00;
+}
+
+.terminal-input {
+    display: flex;
+    align-items: center;
+}
+
+.prompt {
+    margin-right: 10px;
+    color: #00FF00;
+}
+
+input[type="text"] {
+    background-color: black;
+    border: none;
+    color: #00FF00;
+    width: 100%;
+    padding: 5px;
+    outline: none;
+}
+
+/*Scroll Bar*/
+html::-webkit-scrollbar {
+    width: 10px; 
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: #39FF14;  /* Thumb color for WebKit browsers */
+    border-radius: 10px;  /* Optional rounded edges for the thumb */
+}
+
+html::-webkit-scrollbar-track {
+    background-color: black;  /* Track color for WebKit browsers */
+}
+
+html::-webkit-scrollbar-corner {
+    background-color: black;  /* Optional style for scrollbar corners */
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background-color: white;  /* Change color on hover for WebKit browsers */
 }
