@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
             )}`;
         } else if (command.trim() === "whatamidoing") {
             terminalOutput.innerHTML += `${promptStyledText}${formatContent(
-                `Currently doing a course on Network Basics from Cisco Networking Academy.\nAlso doing a remote CyberSecurity Internship at Red Users.\n`,
+                `Completed Red Users's Intership on CyberSecurity and Cisco Networks courses on Network Basics\n`,
                 "white"
             )}`;
         } else if (command.trim() === "exit") {
